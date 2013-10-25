@@ -1,0 +1,21 @@
+<script type="text/javascript">
+    $(function () {
+
+      $("#slider_{{ group.slug }}").responsiveSlides({
+        pager: true,
+        speed: 800,
+        maxwidth: {{ group.width }}
+      });
+
+    });
+ </script>
+
+<ul class="rslides" id="slider_{{ group.slug }}">
+	{% for banner in banners %}
+        <li><a href="{{ banner.url }}"><img src='{{ banner.img.url }}' alt={{ banner.alt }}></a></li>
+	{% endfor %}
+</ul>
+
+
+
+

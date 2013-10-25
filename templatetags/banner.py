@@ -15,7 +15,7 @@ register = template.Library()
 
 
 @register.simple_tag(takes_context=True)
-def banner_group(context, group, tpl='group.html'):
+def banner_group(context, group, tpl='responsiveslides.html'):
     try:
         page_url = context['request'].META['QUERY_STRING']
         group = BannerGroup.objects.get(slug=group)
@@ -62,7 +62,6 @@ def banner_one(context, banner_id, tpl='banner.html'):
 
 	t = template.loader.get_template(tpl)
 	return t.render(template.Context(context))
-
 
 # block render
 @register.simple_tag(takes_context=True)
